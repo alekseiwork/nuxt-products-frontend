@@ -50,6 +50,12 @@ export const useApi = () => {
     });
   };
 
+  const clearProducts = async () => {
+    await $fetch(`${base}/products/clear`, {
+      method: "DELETE",
+    });
+  };
+
   const deleteProduct = async (
     id: string | number
   ): Promise<{ message: string }> => {
@@ -80,6 +86,7 @@ export const useApi = () => {
     createProduct,
     updateProduct,
     deleteProduct,
+    clearProducts,
     importByUrl,
     importFile,
   };

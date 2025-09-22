@@ -2,15 +2,8 @@
 import ProductTable from "~/components/ProductTable.vue";
 import { useProducts } from "~/composables/useProducts";
 
+const { clearProducts } = useApi();
 const { filteredProducts, loading, error, refresh } = useProducts();
-const config = useRuntimeConfig();
-const base = config.public.apiBase || "http://localhost:3001";
-
-const clearProducts = async () => {
-  await fetch(`${base}/products/clear`, {
-    method: "DELETE",
-  });
-};
 </script>
 
 <template>
