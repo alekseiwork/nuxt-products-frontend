@@ -1,7 +1,5 @@
 import type { Product, ProductInput } from "~/types/product";
 
-const { refresh } = useProducts();
-
 export interface ImportResult {
   imported: number;
   errors?: string[];
