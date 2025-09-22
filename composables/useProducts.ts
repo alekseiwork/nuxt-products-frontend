@@ -11,7 +11,7 @@ export const useProducts = () => {
   const sortBy = ref<string>("createdAt");
   const sortOrder = ref<"ASC" | "DESC">("DESC");
 
-  const { getProducts } = useApi();
+  const { getProducts, clearProducts: clearProductsApi } = useApi();
 
   const debouncedSearch = ref("");
   let searchTimeout: NodeJS.Timeout;
@@ -106,6 +106,11 @@ export const useProducts = () => {
     loadProducts();
   });
 
+  const clearProducts = async () => {
+    await clearProductsApi();
+    refresh();
+  };
+
   return {
     products,
     filteredProducts,
@@ -115,6 +120,7 @@ export const useProducts = () => {
     selectedBrand,
     brands,
     loadProducts,
+    clearProducts,
     refresh,
     sortBy,
     sortOrder,

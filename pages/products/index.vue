@@ -2,7 +2,7 @@
 import ProductTable from "~/components/ProductTable.vue";
 import { useProducts } from "~/composables/useProducts";
 
-const { clearProducts } = useApi();
+const { clearProducts } = useProducts();
 const { filteredProducts, loading, error, refresh } = useProducts();
 </script>
 
