@@ -2,8 +2,8 @@
 import ProductTable from "~/components/ProductTable.vue";
 import { useProducts } from "~/composables/useProducts";
 
-const { clearProducts } = useProducts();
-const { filteredProducts, loading, error, refresh } = useProducts();
+const { filteredProducts, loading, error, refresh, clearProducts } =
+  useProducts();
 </script>
 
 <template>
