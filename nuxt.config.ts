@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: "http://localhost:3001",
+      apiBase: "https://nest-products-api-production.up.railway.app",
     },
   },
 });
