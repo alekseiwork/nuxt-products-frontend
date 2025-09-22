@@ -54,7 +54,6 @@ export const useApi = () => {
     await $fetch(`${base}/products/clear`, {
       method: "DELETE",
     });
-    refresh();
   };
 
   const deleteProduct = async (
