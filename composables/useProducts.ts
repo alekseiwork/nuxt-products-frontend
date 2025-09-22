@@ -108,6 +108,7 @@ export const useProducts = () => {
 
   const clearProducts = async () => {
     await clearProductsApi();
+    products.value = [];
     refresh();
   };
 
