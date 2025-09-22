@@ -1,5 +1,7 @@
 import type { Product, ProductInput } from "~/types/product";
 
+const { refresh } = useProducts();
+
 export interface ImportResult {
   imported: number;
   errors?: string[];
@@ -54,6 +56,7 @@ export const useApi = () => {
     await $fetch(`${base}/products/clear`, {
       method: "DELETE",
     });
+    refresh();
   };
 
   const deleteProduct = async (
